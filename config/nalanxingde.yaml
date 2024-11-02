@@ -1,0 +1,34 @@
+data:
+  data_dir: ./data
+  data_name: nalaxingde
+  raw_data: ./data/纳兰性德诗集.json
+
+tokenizer:
+  tokenizer_dir: ./data
+  VOCAB_SIZE: 500    # 词表大小
+  MAX_SEQ_LEN: 512     # GPT模型输入限制
+
+  # special tokens
+  BOS: <|beginoftext|>
+  EOS: <|endoftext|>
+  PAD: <|padding|>
+  IM_START: <|im_start|>
+  IM_END: <|im_end|>
+
+model:
+  GPT_DIM: 384
+  GPT_HEAD: 6
+  GPT_FF: 1024
+  GPT_BLOCKS: 6
+
+train:
+  BATCH_SIZE: 10
+  EPOCHS: 1000
+  model_dir: ./saved_model
+
+inference:
+  TEMPERATURE: 1.2
+  TOP_K: 20
+
+# chat or generate
+GPT_MODE: generate
